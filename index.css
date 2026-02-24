@@ -28,6 +28,7 @@ a {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
+
 }
 
 /* ===== Header ===== */
@@ -35,12 +36,12 @@ a {
   background-color: white;
   border-bottom: 1px solid #ddd;
   position: sticky;
+  display: flex;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  /* background: transparent;
-  transition: all 0.3s ease; */
 }
 
 .header .logo,
@@ -73,7 +74,7 @@ a {
 
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 
 .nav a {
@@ -95,13 +96,18 @@ a {
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 120px 20px;
+  padding: 150px 150px;
+}
+
+#home{
+text-align: center;
+color: white;
 }
 
 /*=added images= */
 
 section {
-padding: 90px 0;
+padding: 190px 0;
 }
 
 
@@ -147,13 +153,13 @@ color: #0a5cff;
 
 
 .btn {
-  display: inline-block;
   background: #0a5cff;
-  color: white;
   padding: 12px 25px;
   border-radius: 8px;
   margin-top: 20px;
   font-weight: 600;
+  display: space-between;
+  gap: 20;
 }
 
 .containers {
@@ -202,10 +208,15 @@ cursor: pointer;
   margin-bottom: 15px;
 }
 
-.hero p {
+.hero h3 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* .hero p {
   font-size: 18px;
   max-width: 600px;
-}
+} */
 
 /* ===== Services ===== */
 .services {
@@ -379,3 +390,86 @@ cursor: pointer;
     align-items: center;
   }
 }
+
+/*////Animation section////*
+/* ===== Hero Animation ===== */
+.hero h2,
+.hero p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*/////Animation of cards///*/
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/*/////service animation///////*/
+/* .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1.5s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/*/////whatsapp animation///*/
+.wa-btn {
+  background-color: #25D366;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(10, 92, 255, 0.3);
+}
+
+section {
+  animation: fadeSection 1s ease;
+}
+
+ @keyframes fadeSection {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} 
